@@ -1,0 +1,10 @@
+remove sku 
+-------------------------------
+add_filter( 'wc_product_sku_enabled', 'bbloomer_remove_product_page_sku' );
+  
+function bbloomer_remove_product_page_sku( $enabled ) {
+    if ( ! is_admin() && is_product() ) {
+        return false;
+    }
+    return $enabled;
+}
