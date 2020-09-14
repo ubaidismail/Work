@@ -10,3 +10,7 @@ function woocommerce_my_single_title() {
 <?php
 }
 }
+------------------
+1-hiding quantity hook from woocommerce product pages agar ek page se hi hatani haito mtlb agar sirf product page hatnai haito os page ki id se display none krdo !!
+1-function custom_remove_all_quantity_fields( $return, $product ) {return true;}
+add_filter( 'woocommerce_is_sold_individually','custom_remove_all_quantity_fields', 10, 2 );
