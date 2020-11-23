@@ -1,0 +1,17 @@
+1- add https: in wordpress general 
+2- add code in. htaccess 
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+--- anyone------
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://smglobalshipping.com/$1 [R,L]
+# END WordPress
+
+3- add this in config.php 
+define('FORCE_SSL_ADMIN', true);
+
+4-update permalink
