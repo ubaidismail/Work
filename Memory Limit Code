@@ -1,5 +1,11 @@
-#put in .htaccess
-php_value upload_max_filesize 1Gb
-php_value post_max_size 1Gb
+#put in wp-config or function.php
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
+#or add this in .htaccess
+
+php_value upload_max_filesize 64M
+php_value post_max_size 64M
 php_value max_execution_time 300
 php_value max_input_time 300
