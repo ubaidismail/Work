@@ -1,0 +1,10 @@
+Wordpress Site Update Steps
+1-database backup 
+2-wpcontent backup
+3-Wp_config backup
+Site Live Steps
+
+1-Data base zip
+2-wpcontent zip
+3-wp config zip
+4-
