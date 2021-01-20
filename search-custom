@@ -1,0 +1,11 @@
+
+function html5_search_form( ) { 
+     $form .= '<section class="search customize-search"><form role="search" method="get" id="search-form" action="'. home_url( '/' ). '" >';
+    $form .= '<label class="screen-reader-text" for="s">' . __('',  'domain') . '</label>';
+     $form .= '<input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Enter address, city or Zip code." />';
+     $form .= '<input type="submit" id="searchsubmit" value="'. esc_attr__('Search', 'domain') .'" />';
+     $form .= '</form></section>';
+     return $form;
+}
+add_shortcode('search-box' , 'html5_search_form');
+ add_filter( 'get_search_form', 'html5_search_form' );
