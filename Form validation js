@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Javascript</title>
+	<link rel="stylesheet" href="">
+</head>
+<style>
+	form{
+		width: 70%;
+		background-color: #ccc;
+		margin: 0 auto;	
+		border-radius: 6px;
+
+	}
+	form input{
+		width: 50%;
+		display: block;
+		height: 50px;
+		border-radius: 5px;
+		border: 1px solid #ccc;
+		margin: 0 auto;
+	}
+	form label{
+		width: 50%;
+		display: block;
+		border-radius: 5px;
+		border: 1px solid #ccc;
+		margin: 0 auto;
+	}
+	form button{
+		height: 40px;
+		width: 170px;
+		background-color: black;
+		color: white;
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+		margin-top: 20px;
+	}
+	p{
+		text-align: center;
+	}
+</style>
+<body>
+	
+	<form action="done.html" id="form" onsubmit="return check()" name="form-1" method="post">
+		<label for="">Name</label>
+		<input type="text" placeholder="Name">
+		<label for="">Email</label>
+		<input type="Email" id="emailget" placeholder="email.." name="email-inp">
+		<p id="demo" style="color:red;"></p>
+		<input type="date" name="date-selct">
+		<p id="demo2" style="color:red;"></p>
+		<button type="submit">submit</button>
+	</form>
+	<script>
+
+
+		
+		function check(){
+		var a =  document.forms['form-1']['email-inp'].value;
+		var b =  document.forms['form-1']['date-selct'].value;
+			if(a == ""){
+				document.getElementById('demo').innerHTML = "This Field Is required";
+				return false;
+			}if (a.indexOf('@')<=0) {
+				document.getElementById('demo').innerHTML = "Plz insert correct email";
+				return false; 	
+			}if ((a.charAt(a.length-4) !='.') && (a.charAt(a.length-3) !='.')) {
+				document.getElementById('demo').innerHTML = "Plz insert correct email";
+				return false; 	
+
+			}if (b == "") {
+				document.getElementById('demo2').innerHTML = "This Field Is required";
+				return false;
+			
+		}else{
+				return true;	
+			}
+	}
+		// function validate_mail(){
+				
+	</script>
+</body>
+</html>
